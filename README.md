@@ -1,3 +1,0 @@
-# Matching 42
-
-This project is not presentation now...

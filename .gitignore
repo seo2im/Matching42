@@ -1,5 +1,6 @@
-node_modules
-package-lock.json
-Secret.js
-test.json
+API_TESTING/node_modules
+API_TESTING/package-lock.json
+API_TESTING/srcs/Secret.js
+
 initial.sh
+package.lock.json

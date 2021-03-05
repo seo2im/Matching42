@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { UID, SECRET } from '../../Secret'
+import { UID, SECRET } from './Secret'
 
 export const getToken = async () => {
 	const response =  await axios({
