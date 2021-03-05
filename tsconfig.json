@@ -1,0 +1,11 @@
+{
+	"include": [
+	  "srcs/*", "srcs/API_TEST/getToken.js"
+	],
+	"compilerOptions": {
+	  "target": "es5",
+	  "jsx": "react",
+	  "allowSyntheticDefaultImports": true,
+	  "esModuleInterop" : true,
+	}
+  }

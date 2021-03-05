@@ -1,5 +1,5 @@
-import { getToken } from './srcs/getToken'
-import { request } from './srcs/request'
+import { getToken } from './getToken'
+import { request } from './request'
 import fs from 'fs'
 
 const main = async () => {

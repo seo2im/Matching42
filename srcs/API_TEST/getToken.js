@@ -1,6 +1,5 @@
 import axios from 'axios'
-import { UID, SECRET } from '../Secret'
-
+import { UID, SECRET } from '../../Secret'
 
 export const getToken = async () => {
 	const response =  await axios({
@@ -14,6 +13,6 @@ export const getToken = async () => {
 	})
 	return {
 		token	: response.data.access_token,
-		expire	: response.data.expires_in
+		expire	: Date.now() + response.data.expires_in * 1000
 	}
 }
