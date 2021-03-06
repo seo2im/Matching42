@@ -7,5 +7,9 @@ FRONT/package-lock.json
 FRONT/init.sh
 FRONT/.next
 
+BACK/node_modules
+BACK/package-lock.json
+BACK/init.sh
+
 initial.sh
 package.lock.json
