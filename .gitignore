@@ -2,10 +2,10 @@ API_TESTING/node_modules
 API_TESTING/package-lock.json
 API_TESTING/srcs/Secret.js
 
-Project/node_modules
-Project/package-lock.json
-Project/init.sh
-Project/.next
+FRONT/node_modules
+FRONT/package-lock.json
+FRONT/init.sh
+FRONT/.next
 
 initial.sh
 package.lock.json
