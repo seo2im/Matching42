@@ -2,8 +2,8 @@ import { gql } from 'apollo-server'
 
 export const typeDefs = gql`
     type User {
-        id: Int
-        password: Int # TODO : change crypto */
+        id: String
+        password: String # TODO : change crypto */
         myProjects: [MyProject]
     }
     type MyProject {
@@ -26,12 +26,12 @@ export const typeDefs = gql`
 
     # Query
     type Query {
-        getUser(id: Int!): User
+        getUser(id: String!): User
     }
 
 
     # Mutation
     type Mutation {
-        addUser(id: Int!, password: Int!): [User]
+        addUser(id: String!, password: String!): [User]
     }
 `

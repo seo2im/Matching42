@@ -12,6 +12,12 @@ app.prepare().then(() => {
     server.get('/check', (req, res) => {
         return res.redirect('/check')
     })
+    server.get('/signIn', (req, res) => {
+        return res.redirect('/signIn')
+    })
+    server.get('/signUp', (req, res) => {
+        return res.redirect('/signUp')
+    })
     server.get('*', (req, res) => {
         return handle(req, res)
     })

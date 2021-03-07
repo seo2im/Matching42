@@ -4,7 +4,7 @@ import { Div, Text } from './styles'
 const Check = () => {
     return (
         <Div>
-            <Text>Check</Text>
+            <Text>loading</Text>
         </Div>
     )
 }

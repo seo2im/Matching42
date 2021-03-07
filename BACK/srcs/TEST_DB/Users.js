@@ -1,7 +1,7 @@
 export const Users = [
     {
-        id: 1,
-        password: 1,
+        id: 'seolim',
+        password: '1',
         myProjects: [{
             projectId: 1,
             autoMatching: true,
@@ -14,8 +14,8 @@ export const Users = [
             state: "FINISH"
         }]
     },{
-        id: 2,
-        password: 2,
+        id: 'seo2im',
+        password: '2',
         myProjects: [{
             projectId: 2,
             autoMatching: true,
