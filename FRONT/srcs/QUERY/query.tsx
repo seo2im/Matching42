@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
-export const TEST_QUERY = gql`
+export const aGetUser = gql`
     query User {
-        getUser(id: 1) {
+        getUser($id: Sring!) {
             id
             password
         }

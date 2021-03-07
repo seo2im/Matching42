@@ -4,7 +4,7 @@ import fs from 'fs'
 
 const main = async () => {
 	const token = await getToken();
-	const data = await request("", null, token)
+	const data = await request("https://api.intra.42.fr/v2/users/seolim", undefined, token)
 
 	fs.writeFileSync("test.json", JSON.stringify(data, undefined, 4));
 }

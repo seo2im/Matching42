@@ -1,15 +1,8 @@
 import React from 'react'
-import { useQuery } from '@apollo/client'
-import { TEST_QUERY } from '../srcs/QUERY/query'
+import { Index } from '../srcs/COMPONENTS'
 
-const HomePgae = () => {
-    const { loading, error, data } = useQuery(TEST_QUERY)
-
-    if (error) return <div>ERROR</div>
-    if (loading) return <div>LOADING</div>
-    console.log(data.getUser.id)
-
-    return <div>DATA</div>
+const index = () => {
+    return <Index />
 }
 
-export default HomePgae
+export default index

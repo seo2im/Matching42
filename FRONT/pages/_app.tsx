@@ -2,14 +2,18 @@ import React from 'react'
 import type { AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '../srcs/HOOK'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '../srcs/STYLES/Theme'
 
 const App = ({ Component, pageProps }: AppProps) => {
     const apolloClient = useApollo(pageProps.initialApolloState)
 
     return (
-        <ApolloProvider client={apolloClient}>
-            <Component {...pageProps} />
-        </ApolloProvider>
+        <ThemeProvider theme={theme}>
+            <ApolloProvider client={apolloClient}>
+                <Component {...pageProps} />
+            </ApolloProvider>
+        </ThemeProvider>
     )
 }
 

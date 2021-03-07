@@ -6,6 +6,7 @@ FRONT/node_modules
 FRONT/package-lock.json
 FRONT/init.sh
 FRONT/.next
+FRONT/srcs/42API/Secret.tsx
 
 BACK/node_modules
 BACK/package-lock.json
