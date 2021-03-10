@@ -2,7 +2,7 @@ export type Users = {
     users: User[]
 }
 export type User = {
-    id: number
+    login: string
     password: number /* TODO : change crypto */
     myProjects: MyProject[]
 }

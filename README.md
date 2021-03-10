@@ -14,4 +14,5 @@ This project is not presentation now...
 #### spec
 - GQL 
 - Apollo Server
-- DB : 미정
+- DB : MongoDB
+

@@ -6,7 +6,6 @@
   "scripts": {
     "start": "babel-node srcs/index.js",
     "eslint": "eslint ./srcs/ --ext .js,.ts,.jsx,.tsx"
-
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +16,10 @@
     "@babel/preset-env": "^7.13.9",
     "apollo-server": "^2.21.0",
     "babel-eslint": "^10.1.0",
+    "dotenv": "^8.2.0",
     "eslint": "^7.21.0",
     "eslint-plugin-graphql": "^4.0.0",
-    "graphql": "^15.5.0"
+    "graphql": "^15.5.0",
+    "mongoose": "^5.11.19"
   }
 }
