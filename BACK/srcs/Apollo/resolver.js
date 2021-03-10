@@ -8,17 +8,34 @@ export const resolvers = {
                 const users = await User.find()
                 return users.find(user => user.login === login)
             } catch (err) {
-                console.log(err);
-                throw err;
-            }   
+                console.log(err)
+                throw err
+            }
         },
+        getProjects: async (_, args) => {
+            try {
+                const projects = await Project.find()
+                return projects
+            } catch (err) {
+                console.log(err)
+                throw err
+            }
+        },
+        getProject: async (_, { id }) => {
+            try {
+                const projects = await Project.find()
+                return projects.find(project => project.projectId === id)
+            } catch (err) {
+                console.log(err)
+                throw err
+            }
+        }
     },
 
     Mutation: {
         addUser: async (_, { login, password }) => {
             try {
                 const data_from_42 = await request(`https://api.intra.42.fr/v2/users/${login}`, undefined)
-                console.log(data_from_42.projects_users[0]);
                 const user = new User({ 
                     login: login, 
                     password: password,

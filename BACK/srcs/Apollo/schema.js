@@ -16,6 +16,7 @@ export const typeDefs = gql`
     }
     type Project {
         _id: ID
+        projectId: Int
         name: String
         waitUserList: [Int] # user id
         teamList: [Int] # team id
@@ -29,8 +30,9 @@ export const typeDefs = gql`
     # Query
     type Query {
         getUser(login: String!): User
+        getProjects: [Project]
+        getProject(id: Int!): Project
     }
-
 
     # Mutation
     type Mutation {

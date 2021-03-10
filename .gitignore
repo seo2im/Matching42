@@ -14,6 +14,7 @@ BACK/package-lock.json
 BACK/init.sh
 BACK/srcs/Secret.js
 BACK/srcs/42API/Secret.js
+BACK/srcs/Model/init.js
 
 initial.sh
 package.lock.json

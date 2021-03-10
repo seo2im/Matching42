@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { DB_USER, DB_PASSWORD, DB_NAME } from '../Secret'
+//import { InitProject } from './init' 
 
 const URL = `mongodb://${DB_USER}:${DB_PASSWORD}@localhost:27017/admin`
 console.log(URL);
@@ -14,6 +15,7 @@ const dbConnect = () => {
     }).catch(err => {
         console.log(err)
     })
+    //InitProject();
 }
 
 export default dbConnect
