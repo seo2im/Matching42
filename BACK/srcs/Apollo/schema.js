@@ -5,11 +5,13 @@ export const typeDefs = gql`
         _id: ID
         login: String
         password: String # TODO : change crypto */
+        myProject: [MyProject]
     }
     type MyProject {
         _id: ID
+        projectId: Int
         autoMatching: Boolean
-        teamId: Int
+        #teamId: Int
         state: String
     }
     type Project {

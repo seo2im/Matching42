@@ -1,10 +1,11 @@
-import Users from '../Model/schema'
+import { User, Team, Project } from '../Model/Schema'
+import { request } from '../42API/request'
 
 export const resolvers = {
     Query: {
         getUser: async (_, { login }) => {
             try {
-                const users = await Users.find()
+                const users = await User.find()
                 return users.find(user => user.login === login)
             } catch (err) {
                 console.log(err);
@@ -16,9 +17,18 @@ export const resolvers = {
     Mutation: {
         addUser: async (_, { login, password }) => {
             try {
-                const user = new Users({ login, password })
+                const data_from_42 = await request(`https://api.intra.42.fr/v2/users/${login}`, undefined)
+                console.log(data_from_42.projects_users[0]);
+                const user = new User({ 
+                    login: login, 
+                    password: password,
+                    myProject: data_from_42.projects_users.map(e => ({
+                        projectId: e.project.id,
+                        autoMatching: false,
+                        state: e.status,
+                    }))
+                 })
                 const result = await user.save();
-                console.log(result);
                 return result
             } catch (err) {
                 console.log(err);

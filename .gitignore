@@ -1,6 +1,7 @@
 API_TESTING/node_modules
 API_TESTING/package-lock.json
 API_TESTING/srcs/Secret.js
+API_TESTING/test.json
 
 FRONT/node_modules
 FRONT/package-lock.json
@@ -12,6 +13,7 @@ BACK/node_modules
 BACK/package-lock.json
 BACK/init.sh
 BACK/srcs/Secret.js
+BACK/srcs/42API/Secret.js
 
 initial.sh
 package.lock.json
