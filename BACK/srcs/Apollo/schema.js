@@ -5,13 +5,13 @@ export const typeDefs = gql`
         _id: ID
         login: String
         password: String # TODO : change crypto */
+        salt: String
         myProject: [MyProject]
     }
     type MyProject {
-        _id: ID
         projectId: Int
         autoMatching: Boolean
-        #teamId: Int
+        teamId: Int
         state: String
     }
     type Project {
@@ -30,6 +30,7 @@ export const typeDefs = gql`
     # Query
     type Query {
         getUser(login: String!): User
+        login(login: String!, password: String!): User
         getProjects: [Project]
         getProject(id: Int!): Project
     }

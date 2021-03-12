@@ -1,7 +1,7 @@
 import React from 'react'
-import SignUp from './SignUp'
+import SignIn from './SignIn'
 import { useApollo } from '../../HOOK'
-import { aAddUser } from '../../QUERY/query'
+import { aLogin } from '../../QUERY/query'
 import { useRouter } from 'next/router'
 
 const Container = () => {
@@ -12,22 +12,20 @@ const Container = () => {
         router.push(url)
     }
 
-    const signUp = async (login: string, password: string) => {
+    const signIn = async (login: string, password: string) => {
         try {
-            const { data } = await apolloClient.mutate({
-                mutation: aAddUser,
+            const { data } = await apolloClient.query({
+                query: aLogin,
                 variables: { login: login, password: password },
             })
-            console.log(data)
-            if (data.addUser) link('/signIn')
+            if (data.login) link('/main')
             else link('/error')
         } catch (err) {
             console.log(err)
-            link('/error')
         }
     }
 
-    return <SignUp signUp={signUp} />
+    return <SignIn signIn={signIn} />
 }
 
 export default Container

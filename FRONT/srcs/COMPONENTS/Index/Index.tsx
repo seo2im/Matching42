@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import { Div } from './styles'
 
 type Props = {
-    link: (id: string) => void
+    link: (login: string) => void
 }
 
 const Index = ({ link }: Props) => {
-    const [id, setId] = useState<string>('')
+    const [login, setLogin] = useState<string>('')
 
     return (
         <Div>
-            <input value={id} onChange={e => setId(e.target.value)} />
-            <button onClick={() => link(id)}>Check</button>
+            <input value={login} onChange={e => setLogin(e.target.value)} />
+            <button onClick={() => link(login)}>Check</button>
         </Div>
     )
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+import { SignIn } from '../srcs/COMPONENTS'
 
 const signIn = () => {
-    return <div>Have ID</div>
+    return <SignIn />
 }
 
 export default signIn

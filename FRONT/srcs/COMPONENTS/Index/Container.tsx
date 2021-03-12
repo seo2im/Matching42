@@ -4,10 +4,10 @@ import Index from './Index'
 
 const Contaienr = () => {
     const router = useRouter()
-    const link = (id: string) => {
+    const link = (login: string) => {
         router.push({
             pathname: '/check',
-            query: { id: id },
+            query: { login: login },
         })
     }
 
