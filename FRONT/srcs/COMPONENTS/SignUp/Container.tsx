@@ -3,16 +3,19 @@ import SignUp from './SignUp'
 import { useApollo } from '../../HOOK'
 import { aAddUser } from '../../QUERY/query'
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../REDUX/REDUCER'
 
 const Container = () => {
     const apolloClient = useApollo()
     const router = useRouter()
+    const login = useSelector((state: RootState) => state.Login)
 
     const link = (url: string) => {
         router.push(url)
     }
 
-    const signUp = async (login: string, password: string) => {
+    const signUp = async (password: string) => {
         try {
             const { data } = await apolloClient.mutate({
                 mutation: aAddUser,

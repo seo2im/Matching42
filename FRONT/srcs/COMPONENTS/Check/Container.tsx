@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
 import Check from './Check'
 import { getUser } from '../../42API'
 import { useApollo } from '../../HOOK'
 import { aGetUser } from '../../QUERY/query'
+import { loginSave } from '../../REDUX/REDUCER/Login'
 
 const Container = () => {
     const router = useRouter()
     const apolloClient = useApollo()
+    const dispatch = useDispatch()
 
     const link = (url: string) => {
         router.push(url)
@@ -29,6 +32,7 @@ const Container = () => {
                 query: aGetUser,
                 variables: { login: user.login },
             })
+            dispatch(loginSave(data.getUser.login))
             if (data.getUser) link('/signIn')
             else link('/signUp')
         } catch (err) {

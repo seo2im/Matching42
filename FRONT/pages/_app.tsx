@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '../srcs/HOOK'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../srcs/STYLES/Theme'
+import reduxWrapper from '../srcs/REDUX/Store'
 
 const App = ({ Component, pageProps }: AppProps) => {
     const apolloClient = useApollo(pageProps.initialApolloState)
@@ -17,4 +18,4 @@ const App = ({ Component, pageProps }: AppProps) => {
     )
 }
 
-export default App
+export default reduxWrapper.withRedux(App)
