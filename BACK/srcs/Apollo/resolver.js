@@ -59,8 +59,11 @@ export const resolvers = {
                     salt: salt,
                     myProject: data_from_42.projects_users.map(e => ({
                         projectId: e.project.id,
+                        name: e.project.name,
                         autoMatching: false,
+                        teamId: -1,
                         state: e.status,
+                        
                     }))
                  })
                 const result = await user.save();

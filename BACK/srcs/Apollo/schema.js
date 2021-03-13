@@ -10,6 +10,7 @@ export const typeDefs = gql`
     }
     type MyProject {
         projectId: Int
+        name: String
         autoMatching: Boolean
         teamId: Int
         state: String

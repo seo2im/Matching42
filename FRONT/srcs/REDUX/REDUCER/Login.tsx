@@ -11,7 +11,6 @@ type LoginState = string
 const initialState: LoginState = ''
 
 const reducer = (state: LoginState = initialState, action: LoginAction) => {
-    console.log(action)
     switch (action.type) {
         case SAVE:
             return action.payload

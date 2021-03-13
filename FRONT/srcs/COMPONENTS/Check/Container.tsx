@@ -27,16 +27,17 @@ const Container = () => {
     }
 
     const checkDB = async user => {
+        dispatch(loginSave(user.login))
         try {
             const { data } = await apolloClient.query({
                 query: aGetUser,
                 variables: { login: user.login },
             })
-            dispatch(loginSave(data.getUser.login))
             if (data.getUser) link('/signIn')
             else link('/signUp')
         } catch (err) {
             console.log(err)
+            dispatch(loginSave(''))
             link('/error')
         }
     }

@@ -13,6 +13,13 @@ export const aLogin = gql`
     query User($login: String!, $password: String!) {
         login(login: $login, password: $password) {
             login
+            myProject {
+                projectId
+                name
+                autoMatching
+                teamId
+                state
+            }
         }
     }
 `

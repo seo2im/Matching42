@@ -1,11 +1,8 @@
 import React from 'react'
+import { Main } from '../srcs/COMPONENTS'
 
 const main = () => {
-    return (
-        <div>
-            <p>MAIN</p>
-        </div>
-    )
+    return <Main />
 }
 
 export default main

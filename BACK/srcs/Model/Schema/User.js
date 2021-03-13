@@ -2,8 +2,9 @@ import { model, Schema }from 'mongoose'
 
 const MyProject = new Schema({
     projectId : { type: Number, required: true },
+    name: {type: String, required: true },
     autoMatching: { type: Boolean, required: true },
-    teamId: { type: Schema.Types.ObjectId, ref: 'Team' },
+    teamId: { type: Number, ref: 'Team' },
     state: { type: String, required: true },
 })
 
