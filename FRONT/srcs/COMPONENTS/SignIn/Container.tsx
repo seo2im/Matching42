@@ -20,8 +20,8 @@ const Container = () => {
 
     const signIn = async (password: string) => {
         try {
-            const { data } = await apolloClient.query({
-                query: aLogin,
+            const { data } = await apolloClient.mutate({
+                mutation: aLogin,
                 variables: { login: login, password: password },
             })
             if (data.login) {

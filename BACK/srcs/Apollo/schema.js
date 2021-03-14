@@ -7,6 +7,7 @@ export const typeDefs = gql`
         password: String # TODO : change crypto */
         salt: String
         myProject: [MyProject]
+        update: String
     }
     type MyProject {
         projectId: Int
@@ -19,19 +20,18 @@ export const typeDefs = gql`
         _id: ID
         projectId: Int
         name: String
-        waitUserList: [Int] # user id
+        waitUserList: [String] # user id
         teamList: [Int] # team id
     }
     type Team {
         _id: ID
         projectId: ID
-        users: [Int] # user id*/
+        users: [String] # user id*/
     }
 
     # Query
     type Query {
         getUser(login: String!): User
-        login(login: String!, password: String!): User
         getProjects: [Project]
         getProject(id: Int!): Project
     }
@@ -39,5 +39,8 @@ export const typeDefs = gql`
     # Mutation
     type Mutation {
         addUser(login: String!, password: String!): User
+        login(login: String!, password: String!): User
+        changeAutoMatching(login: String!, projectId: Int!, flag: Boolean!): User
+        flushProject: [Project]
     }
 `

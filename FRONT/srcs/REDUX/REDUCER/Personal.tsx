@@ -1,7 +1,7 @@
 export type myProject = {
     projectId: number
     name: string
-    autoMatching: string
+    autoMatching: boolean
     teamId: number
     state: string
 }

@@ -13,6 +13,7 @@ const User = new Schema({
     password: { type: String, required: true },
     salt: { type: String, required: true },
     myProject: [MyProject],
+    update: { type: String },
 })
 
 export default model('User', User, 'User')

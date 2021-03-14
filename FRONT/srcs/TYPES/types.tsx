@@ -18,7 +18,7 @@ export type Projects = {
 export type Project = {
     id: number
     name: string
-    waitUserList: number[] /* user id*/
+    waitUserList: string[] /* user id*/
     teamList: number[] /* team id*/
 }
 export type Teams = {

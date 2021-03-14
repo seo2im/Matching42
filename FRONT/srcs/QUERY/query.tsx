@@ -10,7 +10,7 @@ export const aGetUser = gql`
 `
 
 export const aLogin = gql`
-    query User($login: String!, $password: String!) {
+    mutation User($login: String!, $password: String!) {
         login(login: $login, password: $password) {
             login
             myProject {
@@ -28,6 +28,21 @@ export const aAddUser = gql`
     mutation User($login: String!, $password: String!) {
         addUser(login: $login, password: $password) {
             login
+        }
+    }
+`
+
+export const aChangeAutoMatching = gql`
+    mutation User($login: String!, $projectId: Int!, $flag: Boolean!) {
+        changeAutoMatching(login: $login, projectId: $projectId, flag: $flag) {
+            login
+            myProject {
+                projectId
+                name
+                autoMatching
+                teamId
+                state
+            }
         }
     }
 `
