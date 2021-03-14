@@ -4,7 +4,7 @@ const MyProject = new Schema({
     projectId : { type: Number, required: true },
     name: {type: String, required: true },
     autoMatching: { type: Boolean, required: true },
-    teamId: { type: Number, ref: 'Team' },
+    teamId: { type: Schema.Types.ObjectId, ref: 'Team' },
     state: { type: String, required: true },
 })
 

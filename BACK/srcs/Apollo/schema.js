@@ -13,7 +13,7 @@ export const typeDefs = gql`
         projectId: Int
         name: String
         autoMatching: Boolean
-        teamId: Int
+        teamId: ID
         state: String
     }
     type Project {
@@ -21,11 +21,11 @@ export const typeDefs = gql`
         projectId: Int
         name: String
         waitUserList: [String] # user id
-        teamList: [Int] # team id
+        teamList: [ID] # team id
     }
     type Team {
         _id: ID
-        projectId: ID
+        projectId: Int
         users: [String] # user id*/
     }
 
@@ -34,6 +34,7 @@ export const typeDefs = gql`
         getUser(login: String!): User
         getProjects: [Project]
         getProject(id: Int!): Project
+        getTeams: [Team]
     }
 
     # Mutation
@@ -42,5 +43,6 @@ export const typeDefs = gql`
         login(login: String!, password: String!): User
         changeAutoMatching(login: String!, projectId: Int!, flag: Boolean!): User
         flushProject: [Project]
+        makeTeamTest: [Team]
     }
 `

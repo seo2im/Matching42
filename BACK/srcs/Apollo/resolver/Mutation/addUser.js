@@ -15,7 +15,6 @@ const addUser = async (_, { login, password }) => {
                 projectId: e.project.id,
                 name: e.project.name,
                 autoMatching: false,
-                teamId: -1,
                 state: e.status,
             })),
             update: new Date().toString(),
