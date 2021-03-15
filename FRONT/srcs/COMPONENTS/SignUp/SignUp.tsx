@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Div, Text, Button } from './styles'
+import { Div, Text, LoginBox, Title, LoginButton, PwInput, PwBox } from './styles'
 
 type Props = {
     signUp: (password: string) => Promise<void>
@@ -9,12 +9,19 @@ const SignUp = ({ signUp }: Props) => {
 
     return (
         <Div>
-            <Text>Sign Up</Text>
-            <Text>Password</Text>
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            <Div>
-                <Button onClick={() => signUp(password)}>Sign UP</Button>
-            </Div>
+            <LoginBox>
+                <Title>Sign Up</Title>
+                <Text>You don't have Id, please sign up</Text>
+                <PwBox>
+                    <Text>Password</Text>
+                    <PwInput
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+                    <LoginButton onClick={() => signUp(password)}>Sign UP</LoginButton>
+                </PwBox>
+            </LoginBox>
         </Div>
     )
 }

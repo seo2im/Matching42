@@ -1,10 +1,11 @@
 import React from 'react'
-import { Div, Text } from './styles'
+import { Div, BigText, Text } from './styles'
 
 const Check = () => {
     return (
         <Div>
-            <Text>loading</Text>
+            <BigText>LOADING...</BigText>
+            <Text>Check you in 42 accademy...</Text>
         </Div>
     )
 }

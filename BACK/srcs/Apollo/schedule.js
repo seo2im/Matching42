@@ -13,6 +13,7 @@ export const makeTeam = async () => {
         if (project.waitUserList.length >= 4) {
             const newTeam = new Team({
                 projectId: project.projectId,
+                projectName: project.name,
                 users: project.waitUserList.slice(0, 4),
             })
             await newTeam.save()

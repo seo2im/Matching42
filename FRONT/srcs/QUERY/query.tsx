@@ -46,3 +46,13 @@ export const aChangeAutoMatching = gql`
         }
     }
 `
+
+export const aGetTeam = gql`
+    query Team($_id: ID!) {
+        getTeam(_id: $_id) {
+            projectId
+            projectName
+            users
+        }
+    }
+`

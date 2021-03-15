@@ -1,38 +1,33 @@
 import React from 'react'
-import { Div, Text, Box } from './styles'
+import { Div, Text, ProjectsBox, ProjectBox, Title } from './styles'
 import { PersonalState } from '../../REDUX/REDUCER/Personal'
 type Props = {
     personal: PersonalState
-    autoMatchingUpdate: (login: string, projectId: number, flag: boolean) => void
+    link: (url: string) => void
 }
 
-const Main = ({ personal, autoMatchingUpdate }: Props) => {
+const Main = ({ personal, link }: Props) => {
     return (
         <Div>
-            <Text>Main</Text>
-            <Text>{personal.login}</Text>
-            {personal.myProject
-                .filter(
-                    project =>
-                        project.state === 'in_progress' ||
-                        project.state === 'waiting_for_correction',
-                )
-                .map((project, i) => (
-                    <Box
-                        key={`project${i}`}
-                        onClick={() =>
-                            autoMatchingUpdate(
-                                personal.login,
-                                project.projectId,
-                                !project.autoMatching,
-                            )
-                        }
-                    >
-                        <Text>{project.name}</Text>
-                        <Text>{project.state}</Text>
-                        <Text>{`${project.autoMatching}`}</Text>
-                    </Box>
-                ))}
+            <Title>{personal.login}`s Projects</Title>
+            <ProjectsBox>
+                {personal.myProject
+                    .filter(
+                        project =>
+                            project.state === 'in_progress' ||
+                            project.state === 'waiting_for_correction',
+                    )
+                    .map((project, i) => (
+                        <ProjectBox
+                            key={`project${i}`}
+                            onClick={() => link(`/project?projectId=${project.projectId}`)}
+                        >
+                            <Text>{project.name}</Text>
+                            <Text>{project.state}</Text>
+                            <Text>{`${project.autoMatching}`}</Text>
+                        </ProjectBox>
+                    ))}
+            </ProjectsBox>
         </Div>
     )
 }

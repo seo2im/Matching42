@@ -26,6 +26,7 @@ export const typeDefs = gql`
     type Team {
         _id: ID
         projectId: Int
+        projectName: String
         users: [String] # user id*/
     }
 
@@ -35,6 +36,7 @@ export const typeDefs = gql`
         getProjects: [Project]
         getProject(id: Int!): Project
         getTeams: [Team]
+        getTeam(_id: ID!): Team
     }
 
     # Mutation

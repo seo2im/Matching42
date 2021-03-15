@@ -7,13 +7,25 @@ const userUpdate = async (user) => {
     const projects = await Project.find()
 
     await User.update({ login: user.login }, { $set: {
-        myProject: data_from_42.projects_users.map(e => ({
-            projectId: e.project.id,
-            name: e.project.name,
-            autoMatching: user.myProject.find(project => project.projectId === e.project.id).autoMatching,
-            teamId: user.myProject.find(project => project.projectId === e.project.id).teamId,
-            state: e.status,
-        })),
+        myProject: data_from_42.projects_users.map(e => {
+            const alreadyIn = user.myProject.find(p => p.projectId === e.project.id)
+            if (alreadyIn) {
+                return ({
+                    projectId: e.project.id,
+                    name: e.project.name,
+                    autoMatching: alreadyIn.autoMatching,
+                    teamId: alreadyIn.teamId,
+                    state: e.status,
+                })
+            } else {
+                return ({
+                    projectId: e.project.id,
+                    name: e.project.name,
+                    autoMatching: false,
+                    state: e.status,
+                })
+            }
+        }),
         update: new Date().toString()
     }})
 
@@ -47,7 +59,7 @@ const login = async (_, { login, password }) => {
         const hash = crypto.createHash('sha512').update(password + (user[0].salt + "")).digest('hex')
         if (hash === user[0].password) {
             await userUpdate(user[0])
-            return user[0]
+            return (await User.find({login : login}))[0]
         }
         else
             return null

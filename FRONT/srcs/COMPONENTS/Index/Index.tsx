@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Div } from './styles'
+import { IdBox, Div, Text, IdInput, LoginBox, LoginButton, Title } from './styles'
 
 type Props = {
     link: (login: string) => void
@@ -10,8 +10,14 @@ const Index = ({ link }: Props) => {
 
     return (
         <Div>
-            <input value={login} onChange={e => setLogin(e.target.value)} />
-            <button onClick={() => link(login)}>Check</button>
+            <LoginBox>
+                <Title>Matching 42</Title>
+                <IdBox>
+                    <Text>intra ID</Text>
+                    <IdInput value={login} onChange={e => setLogin(e.target.value)} />
+                </IdBox>
+                <LoginButton onClick={() => link(login)}>CHECK 42</LoginButton>
+            </LoginBox>
         </Div>
     )
 }

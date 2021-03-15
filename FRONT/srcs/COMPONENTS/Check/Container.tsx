@@ -18,7 +18,7 @@ const Container = () => {
 
     const check42 = async () => {
         try {
-            return await getUser(router.query.login) /* TODO : custom resigining */
+            return await getUser(router.query.login as string) /* TODO : custom resigining */
         } catch (err) {
             console.log('42 check error')
             console.log(err)
