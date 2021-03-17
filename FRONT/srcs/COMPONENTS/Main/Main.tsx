@@ -1,5 +1,5 @@
 import React from 'react'
-import { Div, Text, ProjectsBox, ProjectBox, Title } from './styles'
+import { Div, Text, ProjectsBox, ProjectBox, Title, Label } from './styles'
 import { PersonalState } from '../../REDUX/REDUCER/Personal'
 type Props = {
     personal: PersonalState
@@ -10,6 +10,7 @@ const Main = ({ personal, link }: Props) => {
     return (
         <Div>
             <Title>{personal.login}`s Projects</Title>
+            <Label>Project List</Label>
             <ProjectsBox>
                 {personal.myProject
                     .filter(

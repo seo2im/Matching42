@@ -3,15 +3,13 @@ import SignIn from './SignIn'
 import { useApollo } from '../../HOOK'
 import { aLogin } from '../../QUERY/query'
 import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RootState } from '../../REDUX/REDUCER'
-import { personalSave } from '../../REDUX/REDUCER/Personal'
 
 const Container = () => {
     const apolloClient = useApollo()
     const router = useRouter()
     const login = useSelector((state: RootState) => state.Login)
-    const dispatch = useDispatch()
 
     console.log(login)
     const link = (url: string) => {
@@ -25,7 +23,7 @@ const Container = () => {
                 variables: { login: login, password: password },
             })
             if (data.login) {
-                dispatch(personalSave(data.login.login, data.login.myProject))
+                localStorage.setItem('login', data.login.login)
                 link('/main')
             } else link('/error')
         } catch (err) {

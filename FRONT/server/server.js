@@ -9,15 +9,6 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
     const server = express();
 
-    server.get('/check', (req, res) => {
-        return res.redirect('/check')
-    })
-    server.get('/signIn', (req, res) => {
-        return res.redirect('/signIn')
-    })
-    server.get('/signUp', (req, res) => {
-        return res.redirect('/signUp')
-    })
     server.get('*', (req, res) => {
         return handle(req, res)
     })

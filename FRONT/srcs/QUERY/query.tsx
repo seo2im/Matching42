@@ -4,7 +4,13 @@ export const aGetUser = gql`
     query User($login: String!) {
         getUser(login: $login) {
             login
-            password
+            myProject {
+                projectId
+                name
+                autoMatching
+                teamId
+                state
+            }
         }
     }
 `

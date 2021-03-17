@@ -57,16 +57,21 @@ const Container = () => {
     }
 
     useEffect(() => {
-        getDB()
+        if (!project) link('/main')
+        else getDB()
     }, [])
 
     return (
-        <Project
-            personal={Personal}
-            project={project}
-            autoMathingUpdate={autoMathingUpdate}
-            team={Team}
-        />
+        <>
+            {project && (
+                <Project
+                    personal={Personal}
+                    project={project}
+                    autoMathingUpdate={autoMathingUpdate}
+                    team={Team}
+                />
+            )}
+        </>
     )
 }
 
