@@ -7,6 +7,7 @@ import { User, Team, Project } from '../Model/Schema'
     3. User add team
 */
 export const makeTeam = async () => {
+    console.log("make Team schedule start")
     const projects = await Project.find()
 
     projects.forEach(async project => {
@@ -36,6 +37,7 @@ export const makeTeam = async () => {
                 })
                 await User.update({ login: login }, { $set: { myProject: newMyProject }})
             })
+            console.log("Team made in ", projectId)
         }
     })
 }
