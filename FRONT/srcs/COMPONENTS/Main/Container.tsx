@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import Main from './Main'
-import { useApollo } from '../../HOOK'
-import { aGetUser } from '../../QUERY/query'
+import { useApollo } from 'srcs/HOOK'
+import { aGetUser } from 'srcs/QUERY/query'
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../REDUX/REDUCER'
+import { RootState } from 'srcs/REDUX/REDUCER'
 import { useRouter } from 'next/router'
-import { personalSave } from '../../REDUX/REDUCER/Personal'
+import { personalSave } from 'srcs/REDUX/REDUCER/Personal'
 
 const Container = () => {
     const apolloClient = useApollo()

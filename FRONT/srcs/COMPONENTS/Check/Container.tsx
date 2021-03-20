@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 import Check from './Check'
-import { getUser } from '../../42API'
-import { useApollo } from '../../HOOK'
-import { aGetUser } from '../../QUERY/query'
-import { loginSave } from '../../REDUX/REDUCER/Login'
+import { getUser } from 'srcs/42API'
+import { useApollo } from 'srcs/HOOK'
+import { aGetUser } from 'srcs/QUERY/query'
+import { loginSave } from 'srcs/REDUX/REDUCER/Login'
 
 const Container = () => {
     const router = useRouter()

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Error } from '../srcs/COMPONENTS'
+import { Error } from 'srcs/COMPONENTS'
 
 const error = () => {
     return <Error />

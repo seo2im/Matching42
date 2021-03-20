@@ -1,5 +1,5 @@
 import React from 'react'
-import { Check } from '../srcs/COMPONENTS'
+import { Check } from 'srcs/COMPONENTS'
 
 const check = () => {
     return <Check />

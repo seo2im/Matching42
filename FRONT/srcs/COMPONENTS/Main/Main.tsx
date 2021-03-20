@@ -1,6 +1,6 @@
 import React from 'react'
 import { Div, Text, ProjectsBox, ProjectBox, Title, Label } from './styles'
-import { PersonalState } from '../../REDUX/REDUCER/Personal'
+import { PersonalState } from 'srcs/REDUX/REDUCER/Personal'
 type Props = {
     personal: PersonalState
     link: (url: string) => void

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import * as Basic from '../../STYLES/Basic'
+import * as Basic from 'srcs/STYLES/Basic'
 
 export const Div = styled(Basic.Div)`
     width: 80%;

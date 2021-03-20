@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import Project from './Project'
 import { useRouter } from 'next/router'
-import { useApollo } from '../../HOOK'
-import { aGetTeam, aChangeAutoMatching } from '../../QUERY/query'
+import { useApollo } from 'srcs/HOOK'
+import { aGetTeam, aChangeAutoMatching } from 'srcs/QUERY/query'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../../REDUX/REDUCER'
-import { teamSave, teamInit } from '../../REDUX/REDUCER/Team'
-import { personalSave } from '../../REDUX/REDUCER/Personal'
+import { RootState } from 'srcs/REDUX/REDUCER'
+import { teamSave, teamInit } from 'srcs/REDUX/REDUCER/Team'
+import { personalSave } from 'srcs/REDUX/REDUCER/Personal'
 
 const Container = () => {
     const { Personal, Team } = useSelector((state: RootState) => state)

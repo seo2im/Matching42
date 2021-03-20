@@ -1,5 +1,5 @@
 import React from 'react'
-import { SignIn } from '../srcs/COMPONENTS'
+import { SignIn } from 'srcs/COMPONENTS'
 
 const signIn = () => {
     return <SignIn />

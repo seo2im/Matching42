@@ -1,7 +1,7 @@
 import React from 'react'
 import { Div, Text, Title, AutoMatchingChange, TeamBox } from './styles'
-import { teamState } from '../../REDUX/REDUCER/Team'
-import { PersonalState, myProject } from '../../REDUX/REDUCER/Personal'
+import { teamState } from 'srcs/REDUX/REDUCER/Team'
+import { PersonalState, myProject } from 'srcs/REDUX/REDUCER/Personal'
 
 type Prop = {
     personal: PersonalState

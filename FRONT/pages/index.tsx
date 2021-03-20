@@ -1,5 +1,5 @@
 import React from 'react'
-import { Index } from '../srcs/COMPONENTS'
+import { Index } from 'srcs/COMPONENTS'
 
 const index = () => {
     return <Index />

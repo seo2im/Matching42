@@ -1,10 +1,10 @@
 import React from 'react'
 import SignIn from './SignIn'
-import { useApollo } from '../../HOOK'
-import { aLogin } from '../../QUERY/query'
+import { useApollo } from 'srcs/HOOK'
+import { aLogin } from 'srcs/QUERY/query'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
-import { RootState } from '../../REDUX/REDUCER'
+import { RootState } from 'srcs/REDUX/REDUCER'
 
 const Container = () => {
     const apolloClient = useApollo()
